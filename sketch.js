@@ -1,3 +1,4 @@
+let drawing = [];   
 let time = 0;
 let path = [];
 
@@ -9,11 +10,11 @@ let fourierY;
 function setup() {
   createCanvas(800, 800);
 
-  // for (let a = 0; a < TWO_PI * 2; a += 0.05) {
-  //   let x = map(a, 0, TWO_PI * 2, -100, 100);
-  //   let r = 150;
-  //   drawing.push(createVector(x, r * noise(a) - r / 2));
-  // }
+   for (let a = 0; a < TWO_PI * 2; a += 0.05) {
+   let x = map(a, 0, TWO_PI * 2, -100, 100);
+   let r = 150;
+   drawing.push(createVector(x, r * noise(a) - r / 2));
+  }
 
   const skip = 8;
   for (let i = 0; i < drawing.length; i += skip) {
